@@ -18,12 +18,13 @@ def split_at_first_digit(formula):
 
 def split_before_each_uppercases(formula):
     # Initialize start, end, and the result list
-    start = 0
-    end = 1
     split_formula = []
+    start = 0
+   
+    
 
     # Loop from the second character onward
-    for ch in range(1, len(formula))
+    for i in range(1, len(formula))
         # If an uppercase letter is found, slice and update
         if formula[i].isupper():
             split_formula.append(formula[start:i])
