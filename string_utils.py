@@ -16,21 +16,24 @@ def split_at_first_digit(formula):
 
 
 
+
 def split_before_each_uppercases(formula):
-    # Initialize start, end, and the result list
-    split_formula = []
+    # Handle empty string
+    if formula == "":
+        return []
+
     start = 0
-   
-    
+    end = 1
+    split_formula = []
 
-    # Loop from the second character onward
-    for i in range(1, len(formula)):
-        # If an uppercase letter is found, slice and update
-        if formula[i].isupper():
-            split_formula.append(formula[start:i])
-            start = i
-        
+    # Loop through characters starting at index 1
+    for ch in formula[1:]:
+        if ch.isupper():
+            split_formula.append(formula[start:end])
+            start = end
+        end += 1
 
-    # Append the final piece after the loop
-    split_formula.append(formula[start:len(formula)])
+    # Append the final section
+    split_formula.append(formula[start:end])
+
     return split_formula
