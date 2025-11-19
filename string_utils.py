@@ -9,7 +9,7 @@ def split_at_first_digit(formula):
       return formula, 1
     else:
       prefix = formula[:digit_location]
-      number = formula[digit_location:]
+      number = int(formula[digit_location:])
       return prefix, number
 
 
@@ -23,12 +23,13 @@ def split_before_each_uppercases(formula):
     split_formula = []
 
     # Loop from the second character onward
-    for ch in formula[1:]:
+    for ch in range(1, len(formula))
         # If an uppercase letter is found, slice and update
-        if ch.isupper():
-            split_formula.append(formula[start:end])
-            start = end
-        end += 1
+        if formula[i].isupper():
+            split_formula.append(formula[start:i])
+            start = i
+        
 
     # Append the final piece after the loop
     split_formula.append(formula[start:end])
+    return split_formula
