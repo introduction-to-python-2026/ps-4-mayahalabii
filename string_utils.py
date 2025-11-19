@@ -24,7 +24,7 @@ def split_before_each_uppercases(formula):
     
 
     # Loop from the second character onward
-    for i in range(1, len(formula))
+    for i in range(1, len(formula)):
         # If an uppercase letter is found, slice and update
         if formula[i].isupper():
             split_formula.append(formula[start:i])
@@ -32,5 +32,5 @@ def split_before_each_uppercases(formula):
         
 
     # Append the final piece after the loop
-    split_formula.append(formula[start:end])
+    split_formula.append(formula[start:len(formula)])
     return split_formula
